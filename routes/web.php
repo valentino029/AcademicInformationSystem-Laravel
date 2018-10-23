@@ -15,6 +15,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', 'DashboardController@index');
 
-Route::get('/dataguru', 'GuruController@index');
+
+Auth::routes();
+
+Route::get('/dashboard', 'DashboardController@index');
+
+Route::get('/AcademicYears', 'AcademicYearsController@index');
+Route::get('/AcademicYears/{id}', 'AcademicYearsController@show');
+
+Route::get('/home', 'HomeController@index')->name('home');

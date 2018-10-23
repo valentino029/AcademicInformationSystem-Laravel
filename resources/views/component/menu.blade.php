@@ -22,14 +22,18 @@
             <li class="treeview">
                 <a href="#">
                     <i class="fa fa-fw fa-book"></i>
-                <span>Curriculum</span>
+                <span>Academic</span>
                 <span class="pull-right-container">
                     <i class="fa fa-angle-left pull-right"></i>
                 </span>
                 </a>
 
                 <ul class="treeview-menu">
-                    <li><a href="/matapelajaran"><i class="fa fa-circle-o"></i> Curriculum</a></li>
+                    <li><a href="/AcademicYears"><i class="fa fa-circle-o"></i> Academic Years</a></li>
+                    <li><a href="/matapelajaran"><i class="fa fa-circle-o"></i> Semesters</a></li>
+                    <li><a href="/matapelajaran"><i class="fa fa-circle-o"></i> Grades</a></li>
+                    <li><a href="/matapelajaran"><i class="fa fa-circle-o"></i> Majors</a></li>
+                    <li><a href="/matapelajaran"><i class="fa fa-circle-o"></i> Academic Subject</a></li>
                 </ul>
             </li>
 
