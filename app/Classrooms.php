@@ -5,20 +5,17 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class AcademicYears extends Model
+class Classrooms extends Model
 {
-   
     // whitelist
-    protected $fillable = ['year_code','year_name']; 
+    protected $fillable = ['classroom_code','classroom_name']; 
     // blacklist
     protected $guarded = ['id'];
 
     use softDeletes;
     protected $dates = ['deleted_at'];
 
-    public function Semesters(){
-        return $this->hasMany('App\Semesters','academic_years_id');
+    public function Majors(){
+        return $this->belongsTo('App\Majors');
     }
-
-    
 }

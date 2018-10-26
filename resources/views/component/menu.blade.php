@@ -30,10 +30,10 @@
 
                 <ul class="treeview-menu">
                     <li><a href="/AcademicYears"><i class="fa fa-circle-o"></i> Academic Years</a></li>
-                    <li><a href="/matapelajaran"><i class="fa fa-circle-o"></i> Semesters</a></li>
-                    <li><a href="/matapelajaran"><i class="fa fa-circle-o"></i> Grades</a></li>
-                    <li><a href="/matapelajaran"><i class="fa fa-circle-o"></i> Majors</a></li>
-                    <li><a href="/matapelajaran"><i class="fa fa-circle-o"></i> Academic Subject</a></li>
+                    <li><a href="/Semesters"><i class="fa fa-circle-o"></i> Semesters</a></li>
+                    <li><a href="/Grades"><i class="fa fa-circle-o"></i> Grades</a></li>
+                    <li><a href="/Majors"><i class="fa fa-circle-o"></i> Majors</a></li>
+                    <li><a href="/AcademicSubjects"><i class="fa fa-circle-o"></i> Academic Subject</a></li>
                 </ul>
             </li>
 
@@ -89,7 +89,8 @@
                 </a>
 
                 <ul class="treeview-menu">
-                    <li><a href="/inputnilai"><i class="fa fa-circle-o"></i> Input Value</a></li>
+                    <li><a href="/InputValue"><i class="fa fa-circle-o"></i> Input Value</a></li>
+                    <li><a href="/inputnilai"><i class="fa fa-circle-o"></i> Show Value</a></li>
                 </ul>
             </li>
 

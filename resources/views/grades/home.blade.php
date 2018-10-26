@@ -8,12 +8,12 @@
 @section('content-header')
 <section class="content-header">
     <h1>
-       Academic Years
+       Grades
         
     </h1>
     <ol class="breadcrumb">
         <li><a href="{{ url('/home')}}"><i class="fa fa-fw fa-home"></i> Home</a></li>
-        <li class="active">Academic Years</li>
+        <li class="active">Grades</li>
     </ol>
 </section>
 @endsection
@@ -27,7 +27,7 @@
                        <div class="col-xs-12">
                          <div class="box">
                            <div class="box-header">
-                             <h3 class="box-title">Academic Years Table <a href="{{ url('AcademicYears/add')}}" class="btn btn-success" title="Add Data"><i class="fa fa-fw fa-plus"></i></a></h3>
+                             <h3 class="box-title">Grades Table <a href="{{ url('Grades/add')}}" class="btn btn-success" title="Add Data"><i class="fa fa-fw fa-plus"></i></a></h3>
                            </div>
                            <!-- /.box-header -->
                            <div class="box-body">
@@ -35,21 +35,23 @@
                                <thead>
                                <tr>
                                  <th>No</th>
-                                 <th>Academic Years</th>
+                                 <th>Grade Code</th>
+                                 <th>Grade Name</th>
                                  <th>Action</th>
                                </tr>
                                </thead>
                                <tbody>
                                
-                                 @foreach ($data as $AY)
+                                 @foreach ($data as $Grade)
                                  <tr>
-                                     <td>{{$AY->id}}</td>
-                                     <td><a href="/AcademicYears/{{ $AY->id }}">{{$AY->year_name}}</a></td>
+                                     <td>{{$Grade->id}}</td>
+                                     <td><a href="/Grades/{{ $Grade->id }}">{{$Grade->grade_code}}</a></td>
+                                     <td>{{$Grade->grade_name}}</td>
                                      <td>
-                                         <a href="/AcademicYears/edit/{{ $AY->id }}">
+                                         <a href="/Grades/edit/{{ $Grade->id }}">
                                              <button class="btn-primary">Edit</button>
                                          </a>
-                                         <a href="/AcademicYears/edit/{{ $AY->id }}">
+                                         <a href="/Grades/edit/{{ $Grade->id }}">
                                              <button class="btn-danger">Delete</button>
                                          </a>
                                      </td>
