@@ -40,18 +40,18 @@
                                </tr>
                                </thead>
                                <tbody>
-                               
+                                @php
+                                    $no = 1;
+                                @endphp
                                  @foreach ($data as $AY)
                                  <tr>
-                                     <td>{{$AY->id}}</td>
+                                     <td>{{$no++}}</td>
                                      <td><a href="/AcademicYears/{{ $AY->id }}">{{$AY->year_name}}</a></td>
                                      <td>
                                          <a href="/AcademicYears/edit/{{ $AY->id }}">
                                              <button class="btn-primary">Edit</button>
                                          </a>
-                                         <a href="/AcademicYears/edit/{{ $AY->id }}">
-                                             <button class="btn-danger">Delete</button>
-                                         </a>
+                                         
                                      </td>
                                  </tr>  
                                  @endforeach

@@ -34,10 +34,10 @@
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
-                <label>Classroom</label>
+                <label>Academic Years</label>
                 <select class="form-control select2" style="width: 100%;">
                   <option selected="selected">Alabama</option>
-                  <option>Alaska</option>
+                  <option>2016</option>
                   <option>California</option>
                   <option>Delaware</option>
                   <option>Tennessee</option>
@@ -49,10 +49,10 @@
             
             <div class="col-md-6">
                 <div class="form-group">
-                  <label>Academic Subject</label>
+                  <label>Semesters</label>
                   <select class="form-control select2" style="width: 100%;">
                     <option selected="selected">Alabama</option>
-                    <option>Alaska</option>
+                    <option>1</option>
                     <option>California</option>
                     <option>Delaware</option>
                     <option>Tennessee</option>
@@ -61,6 +61,67 @@
                   </select>
                 </div> 
             </div>
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Grades</label>
+                <select class="form-control select2" style="width: 100%;">
+                  <option selected="selected">Alabama</option>
+                  <option>10</option>
+                  <option>California</option>
+                  <option>Delaware</option>
+                  <option>Tennessee</option>
+                  <option>Texas</option>
+                  <option>Washington</option>
+                </select>
+              </div> 
+          </div>
+          
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Majors</label>
+              <select class="form-control select2" style="width: 100%;">
+                <option selected="selected">Alabama</option>
+                <option>Science</option>
+                <option>California</option>
+                <option>Delaware</option>
+                <option>Tennessee</option>
+                <option>Texas</option>
+                <option>Washington</option>
+              </select>
+            </div> 
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group">
+              <label>Classroom</label>
+              <select class="form-control select2" style="width: 100%;">
+                <option selected="selected">Alabama</option>
+                <option>10 Science 1</option>
+                <option>California</option>
+                <option>Delaware</option>
+                <option>Tennessee</option>
+                <option>Texas</option>
+                <option>Washington</option>
+              </select>
+            </div> 
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group">
+              <label>Academic Subject</label>
+              <select class="form-control select2" style="width: 100%;">
+                <option selected="selected">Alabama</option>
+                <option>Religions</option>
+                <option>California</option>
+                <option>Delaware</option>
+                <option>Tennessee</option>
+                <option>Texas</option>
+                <option>Washington</option>
+              </select>
+            </div> 
+        </div>
+
           </div>
         </div>
         <!-- /.box-body -->

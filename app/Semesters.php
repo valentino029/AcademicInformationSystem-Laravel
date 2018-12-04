@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Semesters extends Model
 {
     // whitelist
-    protected $fillable = ['semester_code','semester_name']; 
+    //protected $fillable = ['semester_code','semester_name','academic_years_id']; 
     // blacklist
-    protected $guarded = ['id'];
+    protected $guarded = [];
 
     use softDeletes;
     protected $dates = ['deleted_at'];

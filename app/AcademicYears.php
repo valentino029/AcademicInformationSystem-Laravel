@@ -9,9 +9,9 @@ class AcademicYears extends Model
 {
    
     // whitelist
-    protected $fillable = ['year_code','year_name']; 
+    //protected $fillable = ['year_code','year_name']; 
     // blacklist
-    protected $guarded = ['id'];
+    protected $guarded = [];
 
     use softDeletes;
     protected $dates = ['deleted_at'];

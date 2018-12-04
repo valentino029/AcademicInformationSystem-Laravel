@@ -37,7 +37,7 @@
                                  <th>No</th>
                                  <th>Semester Code</th>
                                  <th>Semester Name</th>
-                                 <th>Action</th>
+                                 
                                </tr>
                                </thead>
                                <tbody>
@@ -45,16 +45,9 @@
                                  @foreach ($data as $S)
                                  <tr>
                                      <td>{{$S->id}}</td>
-                                     <td><a href="/Semesters/{{ $S->id }}">{{$S->semester_code}}</a></td>
+                                     <td>{{$S->semester_code}}</td>
                                      <td>{{$S->semester_name}}</td>
-                                     <td>
-                                         <a href="/Semesters/edit/{{ $S->id }}">
-                                             <button class="btn-primary">Edit</button>
-                                         </a>
-                                         <a href="/Semesters/edit/{{ $S->id }}">
-                                             <button class="btn-danger">Delete</button>
-                                         </a>
-                                     </td>
+                                     
                                  </tr>  
                                  @endforeach
          

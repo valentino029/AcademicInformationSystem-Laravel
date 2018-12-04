@@ -37,24 +37,20 @@
                                  <th>No</th>
                                  <th>Major Code</th>
                                  <th>Major Name</th>
-                                 <th>Action</th>
+                                 
                                </tr>
                                </thead>
                                <tbody>
-                               
+
+                                @php
+                                    $no = 1;
+                                @endphp
                                  @foreach ($data as $Major)
                                  <tr>
-                                     <td>{{$Major->id}}</td>
-                                     <td><a href="/Majors/{{ $Major->id }}">{{$Major->major_code}}</a></td>
+                                     <td>{{$no++}}</td>
+                                     <td>{{$Major->major_code}}</td>
                                      <td>{{$Major->major_name}}</td>
-                                     <td>
-                                         <a href="/Majors/edit/{{ $Major->id }}">
-                                             <button class="btn-primary">Edit</button>
-                                         </a>
-                                         <a href="/Majors/edit/{{ $Major->id }}">
-                                             <button class="btn-danger">Delete</button>
-                                         </a>
-                                     </td>
+                                     
                                  </tr>  
                                  @endforeach
          

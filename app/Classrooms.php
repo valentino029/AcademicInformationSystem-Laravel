@@ -8,14 +8,18 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Classrooms extends Model
 {
     // whitelist
-    protected $fillable = ['classroom_code','classroom_name']; 
+    //protected $fillable = ['classroom_code','classroom_name']; 
     // blacklist
-    protected $guarded = ['id'];
+    protected $guarded = [];
 
     use softDeletes;
     protected $dates = ['deleted_at'];
 
     public function Majors(){
         return $this->belongsTo('App\Majors');
+    }
+
+    public function ClassroomDetails(){
+        return $this->hasMany('App\ClassroomDetails');
     }
 }

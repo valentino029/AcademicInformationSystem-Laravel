@@ -7,7 +7,7 @@
                 <img src="/dist/img/avatar.png" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
-                <p>Administrator</p>
+                <p>{{Auth::user()->name}}</p>
             </div>
         </div>
         <!-- sidebar menu: : style can be found in sidebar.less -->
@@ -34,6 +34,7 @@
                     <li><a href="/Grades"><i class="fa fa-circle-o"></i> Grades</a></li>
                     <li><a href="/Majors"><i class="fa fa-circle-o"></i> Majors</a></li>
                     <li><a href="/AcademicSubjects"><i class="fa fa-circle-o"></i> Academic Subject</a></li>
+                    <li><a href="/Classrooms"><i class="fa fa-circle-o"></i> Classroom Management</a></li>
                 </ul>
             </li>
 
@@ -47,7 +48,7 @@
                 </a>
 
                 <ul class="treeview-menu">
-                    <li><a href="/dataguru"><i class="fa fa-circle-o"></i> Teacher Data</a></li>
+                    <li><a href="/TeacherData"><i class="fa fa-circle-o"></i> Teacher Data</a></li>
                 </ul>
             </li>
 
@@ -61,7 +62,7 @@
                 </a>
 
                 <ul class="treeview-menu">
-                    <li><a href="/datasiswa"><i class="fa fa-circle-o"></i> Student Data</a></li>
+                    <li><a href="/StudentData"><i class="fa fa-circle-o"></i> Student Data</a></li>
                 </ul>
             </li>
 
@@ -75,7 +76,7 @@
                 </a>
 
                 <ul class="treeview-menu">
-                    <li><a href="/manajemenkelas"><i class="fa fa-circle-o"></i> Classroom Management</a></li>
+                    <li><a href="/ClassroomDetails"><i class="fa fa-circle-o"></i> Classroom Data</a></li>
                 </ul>
             </li>
 
@@ -89,25 +90,27 @@
                 </a>
 
                 <ul class="treeview-menu">
-                    <li><a href="/InputValue"><i class="fa fa-circle-o"></i> Input Value</a></li>
-                    <li><a href="/inputnilai"><i class="fa fa-circle-o"></i> Show Value</a></li>
+                    <li><a href="/Value"><i class="fa fa-circle-o"></i> Value</a></li>
+                    <li><a href="/ValueByAdmin"><i class="fa fa-circle-o"></i> Value By Admin</a></li>
+                    
                 </ul>
             </li>
 
             <li class="treeview">
                 <a href="#">
                     <i class="fa fa-fw fa-lock"></i>
-                <span>Account Management</span>
+                <span>User Management</span>
                 <span class="pull-right-container">
                     <i class="fa fa-angle-left pull-right"></i>
                 </span>
                 </a>
 
                 <ul class="treeview-menu">
-                    <li><a href="/akunguru"><i class="fa fa-circle-o"></i> Teacher Account</a></li>
-                    <li><a href="/akunsiswa"><i class="fa fa-circle-o"></i> Student Account</a></li>
+                    <li><a href="/TeacherAccount"><i class="fa fa-circle-o"></i> Teacher Account</a></li>
+                    <li><a href="/StudentAccount"><i class="fa fa-circle-o"></i> Student Account</a></li>
                 </ul>
             </li>
+            
         </ul>
     </section>
     <!-- /.sidebar -->
