@@ -6,12 +6,14 @@
 @section('content-header')
 <section class="content-header">
   <h1>
-    Classrooms
+    Study Results
+    <a class="btn btn-primary" href="/pdfPrint/{{$data->id}}"> Print </a>
 
   </h1>
   <ol class="breadcrumb">
     <li><a href="{{ url('/home')}}"><i class="fa fa-fw fa-home"></i> Home</a></li>
-    <li class="active">Classrooms</li>
+    <li class="active">Study Results</li>
+    <li class="active">Show Value</li>
   </ol>
 </section>
 @endsection
@@ -26,10 +28,10 @@
           <div class="col-xs-12">
             <div class="box">
               <div class="box-header">
-                <h3 class="box-title">Kelas : {{$data->Classrooms->classroom_name}} </h3><br>
-                <h3 class="box-title">Ruang Kelas : {{$data->Classrooms->classroom_code}} </h3><br>
-                <h3 class="box-title">Mata Pelajaran : {{$data->AcademicSubjects->academic_subjects_name}} </h3><br>
-                <h3 class="box-title">Pengajar : {{$data->Teachers->teacher_name}} </h3>
+                <h3 class="box-title">Classroom Code : {{$data->Classrooms->classroom_code}} </h3><br>
+                <h3 class="box-title">Classroom : {{$data->Classrooms->classroom_name}} </h3><br>
+                <h3 class="box-title">Subject : {{$data->AcademicSubjects->academic_subjects_name}} </h3><br>
+                <h3 class="box-title">Teacher : {{$data->Teachers->teacher_name}} </h3>
               </div>
               <!-- /.box-header -->
               <div class="box-body">
@@ -38,9 +40,9 @@
                     <tr>
                       <th>No</th>
                       <th>Student Name</th>
-                      <th>Task</th>
-                      <th>UTS</th>
-                      <th>UAS</th>
+                      <th>Daily Assignment</th>
+                      <th>Mid-Test</th>
+                      <th>Final Test</th>
                       <th>Results</th>
                     </tr>
                   </thead>
@@ -50,9 +52,7 @@
                     <tr>
                       <td>{{$no++}}</td>
                       <td>{{$Classroom->Students->student_name}}</td>
-                      <td>@foreach ($Classroom->tugas as $Task)
-                          - {{$Task->nama_tugas}} - {{$Task->nilai}} <br>
-                      @endforeach</td>
+                      <td>{{$Classroom->Tugas}}</td>
                       <td>{{$Classroom->UTS}}</td>
                       <td>{{$Classroom->UAS}}</td>
                       <td>{{$Classroom->Hasil}}</td>

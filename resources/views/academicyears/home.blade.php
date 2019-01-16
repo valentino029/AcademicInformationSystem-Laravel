@@ -46,7 +46,7 @@
                                  @foreach ($data as $AY)
                                  <tr>
                                      <td>{{$no++}}</td>
-                                     <td><a href="/AcademicYears/{{ $AY->id }}">{{$AY->year_name}}</a></td>
+                                     <td>{{$AY->year_name}}</a></td>
                                      <td>
                                          <a href="/AcademicYears/edit/{{ $AY->id }}">
                                              <button class="btn-primary">Edit</button>

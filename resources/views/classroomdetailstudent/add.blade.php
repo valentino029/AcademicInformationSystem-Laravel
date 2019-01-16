@@ -11,7 +11,7 @@
     <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
         <li class="active">Classroom Data</li>
-        <li class="active">Add</li>
+        <li class="active">Input Student</li>
     </ol>
 </section>
 @endsection
@@ -43,7 +43,7 @@
                                             <select name="students_id" class="form-control select2" style="width: 100%;">
                                               <option selected="selected">-</option>
                                               @foreach ($Students as $item)
-                                            <option value="{{$item->id}}">{{$item->student_name}}</option>
+                                            <option value="{{$item->id}}">{{$item->student_nis}} - {{$item->student_name}}</option>
                                               @endforeach
                                               
                                             </select>

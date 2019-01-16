@@ -6,12 +6,12 @@
 @section('content-header')
 <section class="content-header">
   <h1>
-    Classrooms
+    Study Results
 
   </h1>
   <ol class="breadcrumb">
     <li><a href="{{ url('/home')}}"><i class="fa fa-fw fa-home"></i> Home</a></li>
-    <li class="active">Classrooms</li>
+    <li class="active">Study Results</li>
   </ol>
 </section>
 @endsection
@@ -35,6 +35,7 @@
                     <tr>
                       <th>No</th>
                       <th>Classroom Code</th>
+                      <th>Classroom</th>
                       <th>Academic Subject Name</th>
                       <th>Teacher Name</th>
                       <th>Action</th>
@@ -45,7 +46,8 @@
                     @foreach ($data as $Classroom)
                     <tr>
                       <td>{{$no++}}</td>
-                      <td> {{$Classroom->Classrooms->classroom_code}}</td>
+                      <td>{{$Classroom->Classrooms->classroom_code}}</td>
+                      <td>{{$Classroom->Classrooms->classroom_name}}</td>
                       <td>{{$Classroom->AcademicSubjects->academic_subjects_name}}</td>
                       <td>{{$Classroom->Teachers->teacher_name}}</td>
                       <td><a class="btn btn-primary" href="/value/input/{{$Classroom->id}}"> Input Value </a>

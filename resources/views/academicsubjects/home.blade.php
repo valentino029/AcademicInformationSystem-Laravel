@@ -35,21 +35,36 @@
                                <thead>
                                <tr>
                                  <th>No</th>
+                                 <th>Years</th>
+                                 <th>Semesters</th>
+                                 <th>Grades</th>
+                                 <th>Majors</th>
                                  <th>Academic Subject Code</th>
                                  <th>Academic Subject Name</th>
                                  <th>Majors</th>
-                                 
+                                 <th>Action</th>
                                </tr>
                                </thead>
                                <tbody>
-                               
+                                
+                                  @php
+                                   $no = 1;
+                                  @endphp
                                  @foreach ($data as $AS)
                                  <tr>
-                                     <td>{{$AS->id}}</td>
+                                     <td>{{$no++}}</td>
+                                     <td>{{$AS->Majors->Grades->Semesters->AcademicYears->year_name}}</td>
+                                     <td>{{$AS->Majors->Grades->Semesters->semester_name}}</td>
+                                     <td>{{$AS->Majors->Grades->grade_name}}</td>
+                                     <td>{{$AS->Majors->major_name}}</td>
                                      <td>{{$AS->academic_subjects_code}}</td>
                                      <td>{{$AS->academic_subjects_name}}</td>
                                      <td>{{$AS->majors->major_name}}</td>
-                                     
+                                     <td>
+                                      <a href="/AcademicSubjects/edit/{{ $AS->id }}">
+                                          <button class="btn-primary">Edit</button>
+                                      </a>  
+                                     </td>
                                  </tr>  
                                  @endforeach
          

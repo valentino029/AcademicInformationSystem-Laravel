@@ -16,7 +16,7 @@ class Semesters extends Model
     protected $dates = ['deleted_at'];
 
     public function AcademicYears(){
-        return $this->belongsTo('App\AcademicYears');
+        return $this->belongsTo('App\AcademicYears', 'academic_years_id');
     }
 
     public function Grades(){

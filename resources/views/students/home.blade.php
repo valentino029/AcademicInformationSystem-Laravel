@@ -40,20 +40,27 @@
                                  <th>Student Name</th>
                                  <th>Major</th>
                                  <th>Gender</th>
+                                 <th>Action</th>
                                  
                                </tr>
                                </thead>
                                <tbody>
-                               
+                                @php
+                                $no = 1;
+                                @endphp
                                  @foreach ($data as $Students)
                                  <tr>
-                                     <td>{{$Students->id}}</td>
+                                     <td>{{$no++}}</td>
                                      <td>{{$Students->student_nis}}</td>
                                      <td>{{$Students->student_nisn}}</td>
                                      <td>{{$Students->student_name}}</td>
                                      <td>{{$Students->student_major}}</td>
                                      <td>{{$Students->student_gender}}</td>
-                                     
+                                     <td>
+                                        <a href="/StudentData/edit/{{ $Students->id }}">
+                                            <button class="btn-primary">Edit</button>
+                                        </a>  
+                                       </td>
                                  </tr>  
                                  @endforeach
          

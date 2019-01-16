@@ -35,19 +35,28 @@
                                <thead>
                                <tr>
                                  <th>No</th>
+                                 <th>Years</th>
                                  <th>Semester Code</th>
                                  <th>Semester Name</th>
-                                 
+                                 <th>Action</th>
                                </tr>
                                </thead>
                                <tbody>
-                               
+                                @php
+                                    $no = 1;
+                                @endphp
                                  @foreach ($data as $S)
                                  <tr>
-                                     <td>{{$S->id}}</td>
+                                     <td>{{$no++}}</td>
+                                     <td>{{$S->AcademicYears->year_code}}</td>
                                      <td>{{$S->semester_code}}</td>
                                      <td>{{$S->semester_name}}</td>
-                                     
+                                     <td>
+                                      <a href="/Semesters/edit/{{ $S->id }}">
+                                          <button class="btn-primary">Edit</button>
+                                      </a>
+                                      
+                                  </td>
                                  </tr>  
                                  @endforeach
          

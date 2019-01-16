@@ -77,7 +77,7 @@
         <div class="col-xs-8">
           <div class="checkbox icheck">
             <label>
-              <input type="checkbox"> Remember Me
+              
             </label>
           </div>
         </div>
@@ -89,9 +89,8 @@
       </div>
     </form>
 
-    <!-- /.social-auth-links -->
 
-    <a href="#">I forgot my password</a><br>
+    
     
 
   </div>
@@ -100,11 +99,11 @@
 <!-- /.login-box -->
 
 <!-- jQuery 3 -->
-<script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="{{asset('bower_components/jquery/dist/jquery.min.js')}}"></script>
 <!-- Bootstrap 3.3.7 -->
-<script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="{{asset('bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
 <!-- iCheck -->
-<script src="../../plugins/iCheck/icheck.min.js"></script>
+<script src="{{asset('plugins/iCheck/icheck.min.js')}}"></script>
 <script>
   $(function () {
     $('input').iCheck({

@@ -12,7 +12,7 @@ use App\AcademicSubjects;
 class ClassroomDetailsController extends Controller
 {
     public function index(){
-        $ClassroomDetails = ClassroomDetails::all();
+        $ClassroomDetails = ClassroomDetails::orderBy('classrooms_id','ASC')->get();;
         return view('classroomdetails.home',['data'=>$ClassroomDetails]);
     }
 

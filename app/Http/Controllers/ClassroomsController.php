@@ -29,4 +29,21 @@ class ClassroomsController extends Controller
          ]);
          return redirect('/Classrooms');
     }
+
+    public function edit($id){
+        $Classrooms = Classrooms::where('id', $id)->first();
+        $Majors = Majors::all();
+        // dd($Semesters);
+        return view('classrooms.edit',compact('Classrooms','Majors'));
+   }
+
+   public function update(Request $request){
+    Classrooms::where('id', $request->id)
+    ->update([
+        'classroom_code' => $request->classroom_code,
+         'classroom_name' => $request->classroom_name,
+         'majors_id' => $request->majors_id
+    ]);
+     return redirect('/Classrooms');
+    }
 }

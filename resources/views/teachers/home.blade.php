@@ -38,17 +38,25 @@
                                  <th>Identy Number</th>
                                  <th>NIP</th>
                                  <th>Teacher Name</th>
+                                 <th>Action</th>
                                  
                                </tr>
                                </thead>
                                <tbody>
-                               
+                                @php
+                                $no = 1;
+                                @endphp
                                  @foreach ($data as $Teachers)
                                  <tr>
-                                     <td>{{$Teachers->id}}</td>
+                                     <td>{{$no++}}</td>
                                      <td>{{$Teachers->teacher_identy_number}}</td>
                                      <td>{{$Teachers->teacher_nip}}</td>
                                      <td>{{$Teachers->teacher_name}}</td>
+                                     <td>
+                                      <a href="/TeacherData/edit/{{ $Teachers->id }}">
+                                          <button class="btn-primary">Edit</button>
+                                      </a>  
+                                     </td>
                                      
                                  </tr>  
                                  @endforeach

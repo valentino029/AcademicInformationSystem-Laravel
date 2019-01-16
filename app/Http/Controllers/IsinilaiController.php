@@ -7,6 +7,7 @@ use App\ClassroomDetails;
 use App\ClassroomDetailStudents;
 use App\Tugas;
 use DB;
+use PDF;
 use Illuminate\Support\Facades\Auth;
 class IsinilaiController extends Controller
 {
@@ -33,8 +34,26 @@ class IsinilaiController extends Controller
 
     public function indexAdmin()
     {
-        $ClassroomDetails = ClassroomDetails::get();
+        $ClassroomDetails = ClassroomDetails::orderBy('classrooms_id','ASC')->get();
         return view('isinilai.homeadmin',['data'=>$ClassroomDetails]);
+    
+    }
+
+    public function indexStudent()
+    {
+        $user=Auth::user();
+        $students = $user->students->id;
+
+        // $teacher = Auth::user()->teachers->id;
+        
+        // $ClassroomDetails = ClassroomDetails::all();
+        // $ClassroomDetails = ClassroomDetails::whereHas('users', function ($query) {
+        //     $teacher = Auth::user()->teachers->id;
+        //     $query->where($teacher, '=', $teacher);
+        // })->get();
+        $ClassroomDetailStudents = ClassroomDetailStudents::where('students_id',$students)->get();
+        // dd($ClassroomDetailStudents);
+        return view('isinilai.homestudent',['data'=>$ClassroomDetailStudents]);
     
     }
 
@@ -101,9 +120,11 @@ class IsinilaiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function editTugas($id)
     {
-        //
+        $tugas = Tugas::where('id',$id)->first();
+        
+        return view('isinilai.editvalue',compact('tugas'));
     }
 
     /**
@@ -115,7 +136,26 @@ class IsinilaiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
+    }
+
+    public function updateTugas(Request $request)
+    {
+        // dd($request->id);
+        Tugas::where('id', $request->id)
+        ->update([
+            'nama_tugas' => $request->nama_tugas,
+            'nilai' => $request->nilai
+        ]);
+        return back()->withInput();
+    }
+
+    public function deleteTugas(Request $request)
+    {
+        // dd($request->id);
+        Tugas::where('id', $request->id)
+        ->delete();
+        return back();
     }
 
     public function updateUTS(Request $request)
@@ -195,6 +235,32 @@ class IsinilaiController extends Controller
         // dd($murid->ClassroomDetailStudents);
         return view('isinilai.showvalue',['data'=>$value]);
     }
+
+    public function showvalueStudent ($id)
+    {
+        // dd($id);
+        $value = ClassroomDetailStudents::where('students_id',$id)->first();
+        // dd($murid->ClassroomDetailStudents);
+        return view('isinilai.showvalueStudent',['data'=>$value]);
+    }
+
+    public function reportPdf($id)
+{
+    $value = ClassroomDetails::where('id',$id)->first();
+
+    $pdf = PDF::setOptions(['dpi' => 150, 'defaultFont' => 'sans-serif'])
+        ->loadView('report.pdfPrint', compact('value'));
+    return $pdf->stream();
+}
+
+public function reportPdfStudent($id)
+{
+    $value = ClassroomDetailStudents::where('students_id',$id)->first();
+
+    $pdf = PDF::setOptions(['dpi' => 150, 'defaultFont' => 'sans-serif'])
+        ->loadView('report.pdfPrintStudent', compact('value'));
+    return $pdf->stream();
+}
 
 
 }

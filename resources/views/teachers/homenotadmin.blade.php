@@ -8,13 +8,12 @@
 @section('content-header')
 <section class="content-header">
     <h1>
-      Teacher Account
+       Teachers
         
     </h1>
     <ol class="breadcrumb">
         <li><a href="{{ url('/home')}}"><i class="fa fa-fw fa-home"></i> Home</a></li>
-        <li class="active">User Management</li>
-        <li class="active">Teacher Account</li>
+        <li class="active">Teachers</li>
     </ol>
 </section>
 @endsection
@@ -28,7 +27,7 @@
                        <div class="col-xs-12">
                          <div class="box">
                            <div class="box-header">
-                             <h3 class="box-title">Teacher Account Table <a href="{{ url('TeacherAccount/add')}}" class="btn btn-success" title="Add Data"><i class="fa fa-fw fa-plus"></i></a></h3>
+                             <h3 class="box-title">Teachers Data Table </h3>
                            </div>
                            <!-- /.box-header -->
                            <div class="box-body">
@@ -36,24 +35,25 @@
                                <thead>
                                <tr>
                                  <th>No</th>
+                                 <th>Identy Number</th>
+                                 <th>NIP</th>
                                  <th>Teacher Name</th>
-                                 <th>Action</th>
+                                 
+                                 
                                </tr>
                                </thead>
                                <tbody>
                                 @php
-                                    $no = 1;
+                                $no = 1;
                                 @endphp
-                                 @foreach ($data as $TA)
+                                 @foreach ($data as $Teachers)
                                  <tr>
                                      <td>{{$no++}}</td>
-                                     <td><a href="/TeacherAccount/{{ $TA->id }}">{{$TA->name}}</a></td>
-                                     <td>
-                                         <a href="/TeacherAccount/edit/{{ $TA->id }}">
-                                             <button class="btn-primary">Edit</button>
-                                         </a>
-                                         
-                                     </td>
+                                     <td>{{$Teachers->teacher_identy_number}}</td>
+                                     <td>{{$Teachers->teacher_nip}}</td>
+                                     <td>{{$Teachers->teacher_name}}</td>
+                                     
+                                     
                                  </tr>  
                                  @endforeach
          

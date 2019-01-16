@@ -12,7 +12,7 @@ class ClassroomDetailStudents extends Model
     protected $guarded = [];
 
     public function ClassroomsDetails(){
-        return $this->belongsTo('App\ClassroomsDetails','classrooms_details_id');
+        return $this->belongsTo('App\ClassroomDetails','classrooms_details_id');
     }
 
     public function Students(){

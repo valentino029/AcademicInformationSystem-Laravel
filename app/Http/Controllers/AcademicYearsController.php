@@ -16,11 +16,6 @@ class AcademicYearsController extends Controller
         return view('academicyears.add');
     }
 
-    public function show($id){
-        $AcademicYears = AcademicYears::where('id', $id)->first();
-        return view('academicyears.show',['data' => $AcademicYears]);
-    }
-
     public function store(Request $request){
 
         AcademicYears::create([

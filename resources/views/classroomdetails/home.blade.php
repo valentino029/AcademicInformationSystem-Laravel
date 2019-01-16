@@ -13,7 +13,7 @@
     </h1>
     <ol class="breadcrumb">
         <li><a href="{{ url('/home')}}"><i class="fa fa-fw fa-home"></i> Home</a></li>
-        <li class="active">Classrooms</li>
+        <li class="active">Classroom Data</li>
     </ol>
 </section>
 @endsection
@@ -43,10 +43,12 @@
                                </tr>
                                </thead>
                                <tbody>
-                               
+                                @php
+                                $no = 1;
+                                @endphp
                                  @foreach ($data as $Classroom)
                                  <tr>
-                                     <td>{{$Classroom->id}}</td>
+                                     <td>{{$no++}}</td>
                                      <td>{{$Classroom->Classrooms->classroom_code}}</a></td>
                                      <td>{{$Classroom->AcademicSubjects->academic_subjects_name}}</td>
                                      <td>{{$Classroom->Teachers->teacher_name}}</td>

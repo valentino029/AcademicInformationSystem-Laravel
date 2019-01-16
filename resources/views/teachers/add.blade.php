@@ -6,12 +6,11 @@
 <section class="content-header">
     <h1>
         Add
-        <small>User</small>
+        <small>Teacher Data</small>
     </h1>
     <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
-        <li class="active">User Management</li>
-        <li class="active">Teacher Account</li>
+        <li class="active">Teacher Data</li>
         <li class="active">Add</li>
     </ol>
 </section>
@@ -23,7 +22,7 @@
                 <div class="col-md-12">
                   <div class="box box-danger">
                     <div class="box-header with-border">
-                      <h3 class="box-title">Add User</h3>
+                      <h3 class="box-title">Add Teacher Data</h3>
                       <div class="box-tools pull-right">
                         <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                       </div>
@@ -38,13 +37,13 @@
                           <div class="form-group">
 
                             <label>Identy Number</label>
-                            <input type="text" name="teacher_identy_number" class="form-control" placeholder="Enter Level...">
+                            <input type="text" name="teacher_identy_number" class="form-control" placeholder="Enter Identy Number...">
 
                             <label>NIP</label>
-                            <input type="text" name="teacher_nip" class="form-control" placeholder="Enter Name...">
+                            <input type="text" name="teacher_nip" class="form-control" placeholder="Enter NIP...">
 
                             <label>Name</label>
-                            <input type="text" name="teacher_name" class="form-control" placeholder="Enter Email...">
+                            <input type="text" name="teacher_name" class="form-control" placeholder="Enter Name...">
 
                             <div class="form-group">
                                 <label>User</label>

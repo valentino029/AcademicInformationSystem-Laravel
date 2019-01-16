@@ -6,11 +6,11 @@
 <section class="content-header">
     <h1>
         Add
-        <small>Academic Years</small>
+        <small>Semesters</small>
     </h1>
     <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
-        <li class="active">Academic Years</li>
+        <li class="active">Semesters</li>
         <li class="active">Add</li>
     </ol>
 </section>

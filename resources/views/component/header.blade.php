@@ -1,6 +1,6 @@
 <header class="main-header">
     <!-- Logo -->
-    <a href="#" class="logo">
+    <a href="/home" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini"><b>A</b><b>I</b><b>S</b></span>
         <!-- logo for regular state and mobile devices -->
@@ -24,16 +24,26 @@
                 <!-- User Account: style can be found in dropdown.less -->
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="/dist/img/avatar.png" class="user-image" alt="User Image">
+                            @if (Auth::user()->img_url != null)
+                            <img style="width:30px" src="/storage/profile/{{Auth::user()->img_url}}" class="img-circle" alt="User Image">
+                            @else
+                            <img style="width:30px" src="/storage/profile/avatar5.png" class="img-circle" alt="User Image">
+                            @endif
                         <span class="hidden-xs">{{Auth::user()->name}}</span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header">
-                            <img src="/dist/img/avatar.png" class="img-circle" alt="User Image">
+                                @if (Auth::user()->img_url != null)
+                                <img src="/storage/profile/{{Auth::user()->img_url}}" class="img-circle" alt="User Image">
+                                @else
+                                <img src="/storage/profile/avatar5.png" class="img-circle" alt="User Image">
+                                @endif
 
                             <p>
                                     {{Auth::user()->name}}
+                                    <small>@if (!Auth::guest() && Auth::user()->hasRole('Teacher')) Teacher @elseif(!Auth::guest() && Auth::user()->hasRole('Administrator'))
+                                        Administrator @elseif(!Auth::guest() && Auth::user()->hasRole('Student')) Student @endif</small>
                                 
                             </p>
                         </li>
@@ -42,7 +52,7 @@
                         <!-- Menu Footer-->
                         <li class="user-footer">
                             <div class="pull-left">
-                                <a href="#" class="btn btn-default btn-flat">Profile</a>
+                            <a href="/users/show/{{Auth::user()->id}}" class="btn btn-default btn-flat">Profile</a>
                             </div>
                             <div class="pull-right">
                                 

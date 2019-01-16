@@ -4,10 +4,19 @@
         <!-- Sidebar user panel -->
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="/dist/img/avatar.png" class="img-circle" alt="User Image">
+                @if (Auth::user()->img_url != null)
+                <img src="/storage/profile/{{Auth::user()->img_url}}" class="img-circle" alt="User Image">
+                @else
+                <img src="/storage/profile/avatar5.png" class="img-circle" alt="User Image">
+                @endif
+                
             </div>
             <div class="pull-left info">
-                <p>{{Auth::user()->name}}</p>
+                <p>@if (!Auth::guest() && Auth::user()->hasRole('Teacher')) Teacher @elseif(!Auth::guest() && Auth::user()->hasRole('Administrator'))
+                        Administrator @elseif(!Auth::guest() && Auth::user()->hasRole('Student')) Student @endif</p>
+                
+                
+                
             </div>
         </div>
         <!-- sidebar menu: : style can be found in sidebar.less -->
@@ -18,6 +27,8 @@
                     <i class="fa fa-fw fa-home"></i> <span>Home</span>
                 </a>
             </li>
+
+            @role('Administrator')
 
             <li class="treeview">
                 <a href="#">
@@ -90,13 +101,13 @@
                 </a>
 
                 <ul class="treeview-menu">
-                    <li><a href="/Value"><i class="fa fa-circle-o"></i> Value</a></li>
+                    
                     <li><a href="/ValueByAdmin"><i class="fa fa-circle-o"></i> Value By Admin</a></li>
                     
                 </ul>
             </li>
 
-            <li class="treeview">
+            {{-- <li class="treeview">
                 <a href="#">
                     <i class="fa fa-fw fa-lock"></i>
                 <span>User Management</span>
@@ -109,7 +120,132 @@
                     <li><a href="/TeacherAccount"><i class="fa fa-circle-o"></i> Teacher Account</a></li>
                     <li><a href="/StudentAccount"><i class="fa fa-circle-o"></i> Student Account</a></li>
                 </ul>
+            </li> --}}
+
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-fw fa-user-secret"></i>
+                    <span>User Management</span>
+                    <span class="pull-right-container">
+                      <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                  </a>
+                <ul class="treeview-menu">
+                    <li class="{{(Route::getFacadeRoot()->current()->uri() === 'role') ? 'active' : null}}">
+                        <a href="{{ route('role.index') }}">
+                            <i class="fa fa-circle-o"></i> <span>Role</span>
+                        </a>
+                    </li>
+        
+                    <li class="{{(Route::getFacadeRoot()->current()->uri() === 'users') ? 'active' : null}}">
+                        <a href="{{ route('users.index') }}">
+                            <i class="fa fa-circle-o"></i> <span>Users</span>
+                        </a>
+                    </li>
+        
+                    <li class="{{(Route::getFacadeRoot()->current()->uri() === 'users/role-permission') ? 'active' : null}}">
+                        <a href="{{ route('users.roles_permission') }}">
+                            <i class="fa fa-circle-o"></i> <span>Role Permission</span>
+                        </a>
+                    </li>
+                </ul>
             </li>
+
+            @endrole
+            
+            @role('Teacher')
+            <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-fw fa-desktop"></i>
+                    <span>Teacher</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                    </a>
+    
+                    <ul class="treeview-menu">
+                        <li><a href="/DataTeacher"><i class="fa fa-circle-o"></i> Teacher Data</a></li>
+                    </ul>
+                </li>
+    
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-fw fa-desktop"></i>
+                    <span>Student</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                    </a>
+    
+                    <ul class="treeview-menu">
+                        <li><a href="/DataStudent"><i class="fa fa-circle-o"></i> Student Data</a></li>
+                    </ul>
+                </li>
+
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-fw fa-graduation-cap"></i>
+                <span>Study Results</span>
+                <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                </span>
+                </a>
+
+                <ul class="treeview-menu">
+                    <li><a href="/Value"><i class="fa fa-circle-o"></i> Value</a></li>
+                    
+                    
+                </ul>
+            </li>
+
+            
+            @endrole
+
+            @role('Student')
+            <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-fw fa-desktop"></i>
+                    <span>Teacher</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                    </a>
+    
+                    <ul class="treeview-menu">
+                        <li><a href="/DataTeacher"><i class="fa fa-circle-o"></i> Teacher Data</a></li>
+                    </ul>
+                </li>
+    
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-fw fa-desktop"></i>
+                    <span>Student</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                    </a>
+    
+                    <ul class="treeview-menu">
+                        <li><a href="/DataStudent"><i class="fa fa-circle-o"></i> Student Data</a></li>
+                    </ul>
+                </li>
+
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-fw fa-graduation-cap"></i>
+                    <span>Study Results</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                    </a>
+    
+                    <ul class="treeview-menu">
+                        <li><a href="/ValueByStudent"><i class="fa fa-circle-o"></i> Value By Student</a></li>
+                        
+                        
+                    </ul>
+                </li>
+            @endrole
             
         </ul>
     </section>

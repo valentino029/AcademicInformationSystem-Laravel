@@ -7,11 +7,11 @@
 <section class="content-header">
     <h1>
         Add
-        <small>Tugas</small>
+        <small>Daily Assignment</small>
     </h1>
     <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
-        <li class="active">Tugas</li>
+        <li class="active">Daily Assignment</li>
         <li class="active">Add</li>
     </ol>
 </section>
@@ -23,7 +23,7 @@
         <div class="col-md-12">
             <div class="box box-danger">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Add Tugas</h3>
+                    <h3 class="box-title">Add Daily Assignment</h3>
                     <div class="box-tools pull-right">
                         <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                     </div>
@@ -42,7 +42,7 @@
                                 <input type="text" name="nama_tugas" class="form-control" placeholder="Enter Nama Tugas">
 
                                 <label>Nilai</label>
-                                <input type="text" name="nilai" class="form-control" placeholder="Enter Nilai">
+                                <input type="number" name="nilai" class="form-control" placeholder="Enter Nilai" min="0" max="100">
                             </div>
 
                             <div class="box-footer">

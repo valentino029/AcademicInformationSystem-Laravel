@@ -35,6 +35,7 @@
                     <tr>
                       <th>No</th>
                       <th>Classroom Code</th>
+                      <th>Classroom</th>
                       <th>Academic Subject Name</th>
                       <th>Teacher Name</th>
                       <th>Action</th>
@@ -46,6 +47,7 @@
                     <tr>
                       <td>{{$no++}}</td>
                       <td> {{$Classroom->Classrooms->classroom_code}}</td>
+                      <td>{{$Classroom->Classrooms->classroom_name}}</td>
                       <td>{{$Classroom->AcademicSubjects->academic_subjects_name}}</td>
                       <td>{{$Classroom->Teachers->teacher_name}}</td>
                       <td><a class="btn btn-primary" href="/value/input/{{$Classroom->id}}"> Input Value </a>

@@ -37,4 +37,11 @@ class ClassroomDetailStudentsController extends Controller
          ]);
          return redirect('/ClassroomDetails');
     }
+
+    public function destroy(Request $request)
+    {
+        $cds = ClassroomDetailStudents::findOrFail($request->id);
+        $cds->delete();
+        return redirect()->back()->with(['success' => 'User: <strong>' . $cds->student_id . '</strong> Dihapus']);
+    }
 }

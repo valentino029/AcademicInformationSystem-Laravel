@@ -35,9 +35,12 @@
                                <thead>
                                <tr>
                                  <th>No</th>
+                                 <th>Years</th>
+                                 <th>Semesters</th>
+                                 <th>Grades</th>
                                  <th>Major Code</th>
                                  <th>Major Name</th>
-                                 
+                                 <th>Action</th>
                                </tr>
                                </thead>
                                <tbody>
@@ -48,9 +51,16 @@
                                  @foreach ($data as $Major)
                                  <tr>
                                      <td>{{$no++}}</td>
+                                     <td>{{$Major->Grades->Semesters->AcademicYears->year_name}}</td>
+                                     <td>{{$Major->Grades->Semesters->semester_name}}</td>
+                                     <td>{{$Major->Grades->grade_name}}</td>
                                      <td>{{$Major->major_code}}</td>
                                      <td>{{$Major->major_name}}</td>
-                                     
+                                     <td>
+                                      <a href="/Majors/edit/{{ $Major->id }}">
+                                          <button class="btn-primary">Edit</button>
+                                      </a>  
+                                     </td>
                                  </tr>  
                                  @endforeach
          
