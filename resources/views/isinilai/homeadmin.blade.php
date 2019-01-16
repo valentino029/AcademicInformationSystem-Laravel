@@ -6,12 +6,12 @@
 @section('content-header')
 <section class="content-header">
   <h1>
-    Classrooms
+    Study Results
 
   </h1>
   <ol class="breadcrumb">
     <li><a href="{{ url('/home')}}"><i class="fa fa-fw fa-home"></i> Home</a></li>
-    <li class="active">Classrooms</li>
+    <li class="active">Study Results</li>
   </ol>
 </section>
 @endsection

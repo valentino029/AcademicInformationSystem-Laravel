@@ -73,26 +73,7 @@
                 <h3 class="box-title">Subject : {{$value->AcademicSubjects->academic_subjects_name}} </h3><br>
                 <h3 class="box-title">Teacher : {{$value->Teachers->teacher_name}} </h3>
     </div>
-    {{--
-    <div class="customer">
-        <table>
-            <tr>
-                <th>Nama Pelanggan</th>
-                <td>:</td>
-                <td>{{ $order->customer->name }}</td>
-            </tr>
-            <tr>
-                <th>No Telp</th>
-                <td>:</td>
-                <td>{{ $order->customer->phone }}</td>
-            </tr>
-            <tr>
-                <th>Alamat</th>
-                <td>:</td>
-                <td>{{ $order->customer->address }}</td>
-            </tr>
-        </table>
-    </div> --}}
+    
     <div class="page">
         <table class="layout display responsive-table">
             <thead>

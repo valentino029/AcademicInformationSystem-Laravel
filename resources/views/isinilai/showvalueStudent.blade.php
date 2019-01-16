@@ -7,7 +7,7 @@
 <section class="content-header">
   <h1>
     Study Results
-    <a class="btn btn-primary" href="/pdfPrintStudent/{{$data->id}}"> Print </a>
+    <a class="btn btn-primary" href="/pdfPrintStudent/{{$data->classrooms_details_id}}"> Print </a>
 
   </h1>
   <ol class="breadcrumb">

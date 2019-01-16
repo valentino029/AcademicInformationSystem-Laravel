@@ -86,7 +86,7 @@
                           <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                               <span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title">Isi Nilai {{ $Classroom->id}}</h4>
+                            <h4 class="modal-title">Enter Value </h4>
                           </div>
                           <div class="modal-body">
                             <form role="form" action="/nilaiUTS/update" method="POST">
@@ -98,7 +98,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                  <label for="inputEmail3" class="col-sm-2 control-label">Nilai UTS</label>
+                                  <label for="inputEmail3" class="col-sm-2 control-label">Mid Test Score</label>
 
                                   <div class="col-sm-10">
                                     <input type="number" min="0" max="100" class="form-control" placeholder="Nilai UTS" name="UTS">
@@ -128,7 +128,7 @@
                           <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                               <span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title">Isi Nilai {{ $Classroom->id}}</h4>
+                            <h4 class="modal-title">Enter Value</h4>
                           </div>
                           <div class="modal-body">
                             <form role="form" action="/nilaiUTS/update" method="POST">
@@ -140,7 +140,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                  <label for="inputEmail3" class="col-sm-2 control-label">Nilai UTS</label>
+                                  <label for="inputEmail3" class="col-sm-2 control-label">Mid Test Score</label>
 
                                   <div class="col-sm-10">
                                     <input type="number" min="0" max="100" class="form-control" value="{{ $Classroom->UTS}}" name="UTS">
@@ -170,7 +170,7 @@
                           <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                               <span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title">Isi Nilai</h4>
+                            <h4 class="modal-title">Enter Value</h4>
                           </div>
                           <div class="modal-body">
                             <form role="form" action="/nilaiUAS/update" method="POST">
@@ -182,7 +182,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                  <label for="inputEmail3" class="col-sm-2 control-label">Nilai UAS</label>
+                                  <label for="inputEmail3" class="col-sm-2 control-label">Final Test Score</label>
 
                                   <div class="col-sm-10">
                                     <input type="number" min="0" max="100" class="form-control" id="inputEmail3" placeholder="Nilai UAS" name="UAS">
@@ -212,7 +212,7 @@
                           <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                               <span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title">Isi Nilai</h4>
+                            <h4 class="modal-title">Enter Value</h4>
                           </div>
                           <div class="modal-body">
                             <form role="form" action="/nilaiUAS/update" method="POST">
@@ -224,7 +224,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                  <label for="inputEmail3" class="col-sm-2 control-label">Nilai UAS</label>
+                                  <label for="inputEmail3" class="col-sm-2 control-label">Final Test Score</label>
 
                                   <div class="col-sm-10">
                                     <input type="number" min="0" max="100" class="form-control" id="inputEmail3" value="{{ $Classroom->UAS}}" name="UAS">

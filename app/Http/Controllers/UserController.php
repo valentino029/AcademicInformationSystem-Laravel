@@ -73,7 +73,7 @@ class UserController extends Controller
 
     public function saveFile($title, $img_url)
     {
-        $picture = str_slug($title).time(). '.'.$img_url->getClientOriginalExtension();
+        $picture = str_slug($title).'.'.$img_url->getClientOriginalExtension();
         $path = storage_path('app/public/profile');
 
         if (!File::isDirectory($path)) {

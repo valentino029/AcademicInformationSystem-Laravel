@@ -50,7 +50,7 @@
                       <td>{{$Classroom->ClassroomsDetails->Classrooms->classroom_name}}</td>
                       <td>{{$Classroom->ClassroomsDetails->AcademicSubjects->academic_subjects_name}}</td>
                       <td>{{$Classroom->ClassroomsDetails->Teachers->teacher_name}}</td>
-                      <td>  <a class="btn btn-primary" href="/valueStudent/show/{{$Classroom->id}}"> Show Value </a></td>
+                      <td>  <a class="btn btn-primary" href="/valueStudent/show/{{$Classroom->classrooms_details_id}}"> Show Value </a></td>
                       
                       
                     </tr>

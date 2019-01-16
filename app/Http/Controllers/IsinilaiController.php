@@ -20,13 +20,6 @@ class IsinilaiController extends Controller
     {
         $user=Auth::user();
         $teacher = $user->teachers->id;
-        // $teacher = Auth::user()->teachers->id;
-        // dd($teacher);
-        // $ClassroomDetails = ClassroomDetails::all();
-        // $ClassroomDetails = ClassroomDetails::whereHas('users', function ($query) {
-        //     $teacher = Auth::user()->teachers->id;
-        //     $query->where($teacher, '=', $teacher);
-        // })->get();
         $ClassroomDetails = ClassroomDetails::where('teachers_id',$teacher)->get();
         return view('isinilai.home',['data'=>$ClassroomDetails]);
     
@@ -43,16 +36,8 @@ class IsinilaiController extends Controller
     {
         $user=Auth::user();
         $students = $user->students->id;
-
-        // $teacher = Auth::user()->teachers->id;
-        
-        // $ClassroomDetails = ClassroomDetails::all();
-        // $ClassroomDetails = ClassroomDetails::whereHas('users', function ($query) {
-        //     $teacher = Auth::user()->teachers->id;
-        //     $query->where($teacher, '=', $teacher);
-        // })->get();
         $ClassroomDetailStudents = ClassroomDetailStudents::where('students_id',$students)->get();
-        // dd($ClassroomDetailStudents);
+        
         return view('isinilai.homestudent',['data'=>$ClassroomDetailStudents]);
     
     }
@@ -199,7 +184,7 @@ class IsinilaiController extends Controller
         $jumlah = count($resultD);
         $totaltugas = (array_sum(array_column($resultD, 'result'))/$jumlah)*0.6;
 
-        // dd($totaltugas);
+        
 
         $nilaiuts = ClassroomDetailStudents::where('id','=',$id)->get();
         $hasiluts = collect($nilaiuts)->map(function($value) {
@@ -208,14 +193,14 @@ class IsinilaiController extends Controller
         
         $jumlah = count($resultD);
         $totaluts = (array_sum(array_column($hasiluts, 'result')))*0.2;
-        // dd($totaluts);
+        
 
         $nilaiuas = ClassroomDetailStudents::where('id','=',$id)->get();
         $hasiluas = collect($nilaiuas)->map(function($value) {
             return [ 'result' => $value['UAS']];
         })->all();
         $totaluas = (array_sum(array_column($hasiluas, 'result')))*0.2;
-        // dd($totaltugas+$totaluts+$totaluas);
+        
 
         ClassroomDetailStudents::where('id', $id)
         ->update([
@@ -230,17 +215,18 @@ class IsinilaiController extends Controller
 
     public function showvalue ($id)
     {
-        // dd($id);
+        
         $value = ClassroomDetails::where('id',$id)->first();
-        // dd($murid->ClassroomDetailStudents);
+        
         return view('isinilai.showvalue',['data'=>$value]);
     }
 
     public function showvalueStudent ($id)
     {
-        // dd($id);
-        $value = ClassroomDetailStudents::where('students_id',$id)->first();
-        // dd($murid->ClassroomDetailStudents);
+        $user=Auth::user();
+        $students = $user->students->id;
+        $value = ClassroomDetailStudents::where('classrooms_details_id',$id)->where('students_id',$students)->firstOrFail();
+        
         return view('isinilai.showvalueStudent',['data'=>$value]);
     }
 
@@ -255,7 +241,9 @@ class IsinilaiController extends Controller
 
 public function reportPdfStudent($id)
 {
-    $value = ClassroomDetailStudents::where('students_id',$id)->first();
+        $user=Auth::user();
+        $students = $user->students->id;
+        $value = ClassroomDetailStudents::where('classrooms_details_id',$id)->where('students_id',$students)->firstOrFail();
 
     $pdf = PDF::setOptions(['dpi' => 150, 'defaultFont' => 'sans-serif'])
         ->loadView('report.pdfPrintStudent', compact('value'));

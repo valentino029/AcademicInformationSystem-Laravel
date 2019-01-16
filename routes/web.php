@@ -27,6 +27,7 @@ Route::group(['middleware' => ['auth']],function(){
     Route::get('/users/show/{id}', 'UserController@show');
     Route::get('/DataTeacher', 'TeachersController@indexNotAdmin');
     Route::get('/DataStudent', 'StudentsController@indexNotAdmin');
+    Route::get('pdfPrint/{id}','IsinilaiController@reportPdf');
     Route::resource('/EditProfile', 'EditProfileController')->except([
         'show'
     ]);
@@ -105,14 +106,13 @@ Route::post('/StudentData/store', 'StudentsController@store');
 Route::get('/StudentData/edit/{id}', 'StudentsController@edit');
 Route::put('/StudentData/update', 'StudentsController@update');
 
-Route::get('/InputValue', 'InputValueController@myform');
+
 
 Route::get('/ShowValue', 'IsinilaiController@showValue');
 
 Route::get('Value','IsinilaiController@index');
 Route::get('ValueByAdmin','IsinilaiController@indexAdmin');
 Route::get('value/show/{id}','IsinilaiController@showvalue');
-Route::get('pdfPrint/{id}','IsinilaiController@reportPdf');
 Route::get('tugas/{id}','IsinilaiController@tugasIndex');
 Route::get('/tugas/add/{id}', 'IsinilaiController@addTugas');
 Route::get('/tugas/edit/{id}', 'IsinilaiController@editTugas');
