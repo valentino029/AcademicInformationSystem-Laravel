@@ -26,28 +26,6 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
-        // $filename = time().'.jpg';
-        // $request->file('img_url')->storeAs('public/profile',$filename);
-        
-        // $this->validate($request, [
-        //     'name' => 'required|string|max:100',
-        //     'email' => 'required|email|unique:users',
-        //     'password' => 'required|min:6',
-        //     'role' => 'required|string|exists:roles,name',
-            
-        // ]);
-
-        // $user = User::firstOrCreate([
-        //     'email' => $request->email
-        // ], [
-        //     'name' => $request->name,
-        //     'img_url' => $filename,
-        //     'password' => bcrypt($request->password),
-        //     'status' => true
-        // ]);
-
-        // $user->assignRole($request->role);
-        // return redirect(route('users.index'))->with(['success' => 'User: <strong>' . $user->name . '</strong> Ditambahkan']);
 
         try {
             $img_url = null;
@@ -98,19 +76,7 @@ class UserController extends Controller
 
     public function update(Request $request, $id)
     {
-        // $this->validate($request, [
-        //     'name' => 'required|string|max:100',
-        //     'email' => 'required|email|exists:users,email',
-        //     'password' => 'nullable|min:6',
-        // ]);
-
-        // $user = User::findOrFail($id);
-        // $password = !empty($request->password) ? bcrypt($request->password):$user->password;
-        // $user->update([
-        //     'name' => $request->name,
-        //     'password' => $password
-        // ]);
-        // return redirect(route('users.index'))->with(['success' => 'User: <strong>' . $user->name . '</strong> Diperbaharui']);
+        
 
         try{
             $user = User::findOrFail($id);
